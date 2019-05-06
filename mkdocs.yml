@@ -1,0 +1,42 @@
+site_name: EasySqlParser
+#theme: readthedocs
+theme: 
+  name: material
+  feature:
+    tabs: true
+
+markdown_extensions:
+  - codehilite:
+      use_pygments: true
+      noclasses: true
+      #linenums: true
+    #   pygments_style: monokai
+      pygments_style: friendly
+  - admonition
+  - pymdownx.superfences
+  - footnotes
+
+extra_css:
+    - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
+    - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
+    - "css/custom.css"
+
+extra:
+    font:
+        text: "Noto Sans JP"
+        code: "Consolas"
+    search:
+        language: 'ja'
+
+# Page tree
+nav:
+    - Home: 'index.md'
+    - Configuration: 'config.md'
+    - SQL: 'sql.md'
+    - 'Expression language': 'expression.md'
+    - 'Practical usage': 'usage.md'
+    - '日本語':
+        - '設定': 'ja/config.md'
+        - SQL: 'ja/sql.md'
+        - '式言語': 'ja/expression.md'
+        - '実践的な使い方': 'ja/usage.md'
