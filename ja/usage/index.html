@@ -1,0 +1,1287 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>実践的な使い方 - EasySqlParser</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EasySqlParser" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EasySqlParser
+            </span>
+            <span class="md-header-nav__topic">
+              実践的な使い方
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../config/" title="日本語" class="md-tabs__link md-tabs__link--active">
+          日本語
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EasySqlParser" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    EasySqlParser
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../expression/" title="Expression language" class="md-nav__link">
+      Expression language
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../usage/" title="Practical usage" class="md-nav__link">
+      Practical usage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      日本語
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        日本語
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="設定" class="md-nav__link">
+      設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sql/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../expression/" title="式言語" class="md-nav__link">
+      式言語
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        実践的な使い方
+      </label>
+    
+    <a href="./" title="実践的な使い方" class="md-nav__link md-nav__link--active">
+      実践的な使い方
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="概要" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="パース結果" class="md-nav__link">
+    パース結果
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parsedsql" title="ParsedSql" class="md-nav__link">
+    ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugsql" title="DebugSql" class="md-nav__link">
+    DebugSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dbdataparameters" title="DbDataParameters" class="md-nav__link">
+    DbDataParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="実行例(通常)" class="md-nav__link">
+    実行例(通常)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparse-parsedsql" title="SqlParser#Parse ParsedSql" class="md-nav__link">
+    SqlParser#Parse ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparse-debugsql" title="SqlParser#Parse DebugSql" class="md-nav__link">
+    SqlParser#Parse DebugSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparse-dbdataparameters" title="SqlParser#Parse DbDataParameters" class="md-nav__link">
+    SqlParser#Parse DbDataParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="ページング" class="md-nav__link">
+    ページング
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#result" title="Result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countresult" title="CountResult" class="md-nav__link">
+    CountResult
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="実行例(ページング)" class="md-nav__link">
+    実行例(ページング)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-resultparsedsql" title="SqlParser#ParsePaginated Result.ParsedSql" class="md-nav__link">
+    SqlParser#ParsePaginated Result.ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-resultdebugsql" title="SqlParser#ParsePaginated Result.DebugSql" class="md-nav__link">
+    SqlParser#ParsePaginated Result.DebugSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-countresultparsedsql" title="SqlParser#ParsePaginated CountResult.ParsedSql" class="md-nav__link">
+    SqlParser#ParsePaginated CountResult.ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-countresultdebugsql" title="SqlParser#ParsePaginated CountResult.DebugSql" class="md-nav__link">
+    SqlParser#ParsePaginated CountResult.DebugSql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_number" title="ROW_NUMBER の使用" class="md-nav__link">
+    ROW_NUMBER の使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_number_1" title="実行例(ROW_NUMBER)" class="md-nav__link">
+    実行例(ROW_NUMBER)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#row_number-resultparsedsql" title="ROW_NUMBER Result.ParsedSql" class="md-nav__link">
+    ROW_NUMBER Result.ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row_number-resultdebugsql" title="ROW_NUMBER Result.DebugSql" class="md-nav__link">
+    ROW_NUMBER Result.DebugSql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="概要" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="パース結果" class="md-nav__link">
+    パース結果
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parsedsql" title="ParsedSql" class="md-nav__link">
+    ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugsql" title="DebugSql" class="md-nav__link">
+    DebugSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dbdataparameters" title="DbDataParameters" class="md-nav__link">
+    DbDataParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="実行例(通常)" class="md-nav__link">
+    実行例(通常)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparse-parsedsql" title="SqlParser#Parse ParsedSql" class="md-nav__link">
+    SqlParser#Parse ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparse-debugsql" title="SqlParser#Parse DebugSql" class="md-nav__link">
+    SqlParser#Parse DebugSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparse-dbdataparameters" title="SqlParser#Parse DbDataParameters" class="md-nav__link">
+    SqlParser#Parse DbDataParameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="ページング" class="md-nav__link">
+    ページング
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#result" title="Result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countresult" title="CountResult" class="md-nav__link">
+    CountResult
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="実行例(ページング)" class="md-nav__link">
+    実行例(ページング)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-resultparsedsql" title="SqlParser#ParsePaginated Result.ParsedSql" class="md-nav__link">
+    SqlParser#ParsePaginated Result.ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-resultdebugsql" title="SqlParser#ParsePaginated Result.DebugSql" class="md-nav__link">
+    SqlParser#ParsePaginated Result.DebugSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-countresultparsedsql" title="SqlParser#ParsePaginated CountResult.ParsedSql" class="md-nav__link">
+    SqlParser#ParsePaginated CountResult.ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlparserparsepaginated-countresultdebugsql" title="SqlParser#ParsePaginated CountResult.DebugSql" class="md-nav__link">
+    SqlParser#ParsePaginated CountResult.DebugSql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_number" title="ROW_NUMBER の使用" class="md-nav__link">
+    ROW_NUMBER の使用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#row_number_1" title="実行例(ROW_NUMBER)" class="md-nav__link">
+    実行例(ROW_NUMBER)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#row_number-resultparsedsql" title="ROW_NUMBER Result.ParsedSql" class="md-nav__link">
+    ROW_NUMBER Result.ParsedSql
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row_number-resultdebugsql" title="ROW_NUMBER Result.DebugSql" class="md-nav__link">
+    ROW_NUMBER Result.DebugSql
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">実践的な使い方</h1>
+<h2 id="_2">概要</h2>
+<p>SQL文をパースするにはパラメータオブジェクトを定義する必要があります</p>
+<div class="admonition note">
+<p class="admonition-title">パラメータオブジェクト</p>
+<p>パラメータオブジェクトは匿名型でも構いませんが、特に理由がなければ明示的な型として実装することをお勧めします<br />
+さらに言えば、上記パラメータオブジェクトクラスとSQLファイルを近くに置くとことで管理しやすくなります</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>パラメータオブジェクトはネストされたプロパティへのアクセスはできません</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">SqlCondition</span>
+{
+    <span style="color: #007020; font-weight: bold">public</span> ChildCondition ChildCondition { <span style="color: #007020; font-weight: bold">get</span>; <span style="color: #007020; font-weight: bold">set</span>; }
+    <span style="color: #007020; font-weight: bold">public</span> <span style="color: #902000">string</span> Name { <span style="color: #007020; font-weight: bold">get</span>; <span style="color: #007020; font-weight: bold">set</span>;}
+}
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">ChildCondition</span>
+{
+    <span style="color: #007020; font-weight: bold">public</span> <span style="color: #902000">string</span> Name { <span style="color: #007020; font-weight: bold">get</span>; <span style="color: #007020; font-weight: bold">set</span>;}
+}
+</pre></div>
+
+<p>上記の場合、ChildCondition.Nameへはアクセスできません</p>
+</div>
+<h2 id="_3">パース結果</h2>
+<p><code>SqlParser#Parse</code> の結果( <code>SqlParserResult</code> 型)は下記プロパティを持つオブジェクトとして返されます</p>
+<ul>
+<li>ParsedSql</li>
+<li>DebugSql</li>
+<li>DbDataParameters</li>
+</ul>
+<h3 id="parsedsql">ParsedSql</h3>
+<p><code>ADO.NET</code>、<code>Dapper</code>、<code>Entity Framework Core</code> などに渡すためのパースされたSQL文です</p>
+<p>パラメータオブジェクトの内容によって動的に解釈されSQL文が組み立てられます<br />
+有効なプロパティの値は <code>System.Data.IDbDataParameter</code> インスタンスのパラメータ名によって置き換えられます</p>
+<h3 id="debugsql">DebugSql</h3>
+<p>ログ出力のためのSQL文です</p>
+<p>パラメータオブジェクトの内容によって動的に解釈されSQL文が組み立てられます<br />
+有効なプロパティの値が埋め込まれた状態のSQL文となります</p>
+<h3 id="dbdataparameters">DbDataParameters</h3>
+<p>SQL実行のための <code>System.Data.IDbDataParameter</code> インスタンスのコレクションです</p>
+<div class="admonition note">
+<p class="admonition-title">System.Data.IDbDataParameter</p>
+<p><code>System.Data.IDbDataParameter</code> を利用しているのは、以下の2つの理由によるものです</p>
+<ul>
+<li><code>ADO.NET DataSet</code>などレガシー向けへの配慮</li>
+<li><code>Dapper</code>、<code>Entity Framework Core</code> などのフレームワークからの中立性への考慮</li>
+</ul>
+<p>この関係で <code>Dapper</code>、<code>Entity Framework Core</code> ではパラメータの変換が必要となります<br />
+詳しい例は<a href="https://github.com/stroheim/EasySqlParser.Examples">サンプルプログラム</a>をご覧ください</p>
+</div>
+<h2 id="_4">実行例(通常)</h2>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic">/**</span>
+<span style="color: #60a0b0; font-style: italic">SelectEmployees.sql</span>
+<span style="color: #60a0b0; font-style: italic">*/</span>
+<span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if MiddleNames != null &amp;&amp; MiddleNames.Count &gt; 0 */</span>
+  t1.MiddleName <span style="color: #007020; font-weight: bold">IN</span> <span style="color: #60a0b0; font-style: italic">/* MiddleNames */</span>(<span style="color: #4070a0">&#39;M&#39;</span>)
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+
+  <span style="color: #60a0b0; font-style: italic">/*%if BirthDateFrom != null &amp;&amp; BirthDateTo != null */</span>
+  <span style="color: #007020; font-weight: bold">AND</span> t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #60a0b0; font-style: italic">/* BirthDateFrom */</span><span style="color: #4070a0">&#39;1980-01-01&#39;</span> <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #60a0b0; font-style: italic">/* BirthDateTo */</span><span style="color: #4070a0">&#39;1990-01-01&#39;</span>
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+
+  <span style="color: #60a0b0; font-style: italic">/*%if FirstName != null &amp;&amp; FirstName != &quot;&quot; */</span>
+  <span style="color: #007020; font-weight: bold">AND</span> t1.FirstName <span style="color: #007020; font-weight: bold">LIKE</span> <span style="color: #60a0b0; font-style: italic">/* @StartsWith(FirstName) */</span><span style="color: #4070a0">&#39;A%&#39;</span>
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+</pre></div>
+
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">SqlCondition</span>
+{
+    <span style="color: #007020; font-weight: bold">public</span> List&lt;<span style="color: #902000">string</span>&gt; MiddleNames { <span style="color: #007020; font-weight: bold">get</span>; <span style="color: #007020; font-weight: bold">set</span>; }
+    <span style="color: #007020; font-weight: bold">public</span> DateTime? BirthDateFrom { <span style="color: #007020; font-weight: bold">get</span>; <span style="color: #007020; font-weight: bold">set</span>; }
+    <span style="color: #007020; font-weight: bold">public</span> DateTime? BirthDateTo { <span style="color: #007020; font-weight: bold">get</span>; <span style="color: #007020; font-weight: bold">set</span>; }
+    <span style="color: #007020; font-weight: bold">public</span> <span style="color: #902000">string</span> FirstName { <span style="color: #007020; font-weight: bold">get</span>; <span style="color: #007020; font-weight: bold">set</span>; }
+}
+
+<span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Program</span>
+{
+    <span style="color: #007020; font-weight: bold">static</span> <span style="color: #007020; font-weight: bold">void</span> <span style="color: #06287e">Main</span>(<span style="color: #902000">string</span>[] args)
+    {
+        ConfigContainer.AddDefault(
+            DbConnectionKind.SqlServer, <span style="color: #60a0b0; font-style: italic">// DBコネクションの種類</span>
+            () =&gt; <span style="color: #007020; font-weight: bold">new</span> SqlParameter()    <span style="color: #60a0b0; font-style: italic">// SQLパラメータインスタンス作成のデリゲート</span>
+        );
+        ConfigContainer.EnableCache = <span style="color: #007020; font-weight: bold">true</span>;
+
+        <span style="color: #902000">var</span> condition = <span style="color: #007020; font-weight: bold">new</span> SqlCondition
+                {
+                    BirthDateFrom = <span style="color: #007020; font-weight: bold">new</span> DateTime(<span style="color: #40a070">1980</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>),
+                    BirthDateTo = <span style="color: #007020; font-weight: bold">new</span> DateTime(<span style="color: #40a070">1990</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>)
+                };
+        <span style="color: #902000">var</span> parser = <span style="color: #007020; font-weight: bold">new</span> SqlParser(<span style="color: #4070a0">&quot;path/to/SelectEmployees.sql&quot;</span>, condition);
+        <span style="color: #902000">var</span> result = parser.Parse();
+    }
+}
+</pre></div>
+
+<p>上記の場合パース結果はそれぞれ下記のとおりです</p>
+<h3 id="sqlparserparse-parsedsql">SqlParser#Parse ParsedSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #666666">@</span>BirthDateFrom <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #666666">@</span>BirthDateTo
+
+
+
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+</pre></div>
+
+<h3 id="sqlparserparse-debugsql">SqlParser#Parse DebugSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #4070a0">&#39;1980/01/01 0:00:00&#39;</span> <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #4070a0">&#39;1990/01/01 0:00:00&#39;</span>
+
+
+
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+</pre></div>
+
+<h3 id="sqlparserparse-dbdataparameters">SqlParser#Parse DbDataParameters</h3>
+<table>
+<thead>
+<tr>
+<th align="left">index</th>
+<th align="left">parameter name</th>
+<th align="left">parameter value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">0</td>
+<td align="left">@BirthDateFrom</td>
+<td align="left">new DateTime(1980, 1, 1)</td>
+</tr>
+<tr>
+<td align="left">1</td>
+<td align="left">@BirthDateTo</td>
+<td align="left">new DateTime(1990, 1, 1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">ページング</h2>
+<p>EasySqlParserが内部でSQLファイルを書き換えることでデータ取得用のSQL文、件数取得用のSQL文を生成できます</p>
+<p><code>SqlParser#ParsePaginated</code> の結果は下記プロパティを持つオブジェクトとして返されます</p>
+<ul>
+<li>Result</li>
+<li>CountResult</li>
+</ul>
+<h3 id="result">Result</h3>
+<p>データ取得用の <code>SqlParserResult</code></p>
+<p>これは <code>SqlParserResult</code> 型であり、<code>SqlParser#Parse</code> の結果と同様 <code>ParsedSql</code>、<code>DebugSql</code>、<code>DbDataParameters</code> を持っています</p>
+<h3 id="countresult">CountResult</h3>
+<p>件数取得用の <code>SqlParserResult</code></p>
+<p>データ取得用と同じく、 <code>ParsedSql</code>、<code>DebugSql</code>、<code>DbDataParameters</code> を持っています</p>
+<h2 id="_6">実行例(ページング)</h2>
+<p>SQLファイルやパラメータオブジェクトは同じなので省略</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Program</span>
+{
+    <span style="color: #007020; font-weight: bold">static</span> <span style="color: #007020; font-weight: bold">void</span> <span style="color: #06287e">Main</span>(<span style="color: #902000">string</span>[] args)
+    {
+        ConfigContainer.AddDefault(
+            DbConnectionKind.SqlServer, <span style="color: #60a0b0; font-style: italic">// DBコネクションの種類</span>
+            () =&gt; <span style="color: #007020; font-weight: bold">new</span> SqlParameter()    <span style="color: #60a0b0; font-style: italic">// SQLパラメータインスタンス作成のデリゲート</span>
+        );
+        ConfigContainer.EnableCache = <span style="color: #007020; font-weight: bold">true</span>;
+
+        <span style="color: #902000">var</span> condition = <span style="color: #007020; font-weight: bold">new</span> SqlCondition
+                {
+                    BirthDateFrom = <span style="color: #007020; font-weight: bold">new</span> DateTime(<span style="color: #40a070">1980</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>),
+                    BirthDateTo = <span style="color: #007020; font-weight: bold">new</span> DateTime(<span style="color: #40a070">1990</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>)
+                };
+        <span style="color: #902000">var</span> parser = <span style="color: #007020; font-weight: bold">new</span> SqlParser(<span style="color: #4070a0">&quot;path/to/SelectEmployees.sql&quot;</span>, condition);
+        <span style="color: #902000">var</span> result = parser.ParsePaginated(<span style="color: #40a070">10</span>, <span style="color: #40a070">10</span>); <span style="color: #60a0b0; font-style: italic">// 11件目から20件目を取得</span>
+    }
+}
+</pre></div>
+
+<h3 id="sqlparserparsepaginated-resultparsedsql">SqlParser#ParsePaginated Result.ParsedSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #666666">@</span>BirthDateFrom <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #666666">@</span>BirthDateTo
+
+
+
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+ <span style="color: #007020; font-weight: bold">offset</span> <span style="color: #40a070">10</span> <span style="color: #007020; font-weight: bold">rows</span> <span style="color: #007020; font-weight: bold">fetch</span> <span style="color: #007020; font-weight: bold">next</span> <span style="color: #40a070">10</span> <span style="color: #007020; font-weight: bold">rows</span> <span style="color: #007020; font-weight: bold">only</span>
+</pre></div>
+
+<h3 id="sqlparserparsepaginated-resultdebugsql">SqlParser#ParsePaginated Result.DebugSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #4070a0">&#39;1980/01/01 0:00:00&#39;</span> <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #4070a0">&#39;1990/01/01 0:00:00&#39;</span>
+
+
+
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+ <span style="color: #007020; font-weight: bold">offset</span> <span style="color: #40a070">10</span> <span style="color: #007020; font-weight: bold">rows</span> <span style="color: #007020; font-weight: bold">fetch</span> <span style="color: #007020; font-weight: bold">next</span> <span style="color: #40a070">10</span> <span style="color: #007020; font-weight: bold">rows</span> <span style="color: #007020; font-weight: bold">only</span>
+</pre></div>
+
+<h3 id="sqlparserparsepaginated-countresultparsedsql">SqlParser#ParsePaginated CountResult.ParsedSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">select</span> <span style="color: #007020; font-weight: bold">count</span>(<span style="color: #666666">*</span>) <span style="color: #007020; font-weight: bold">from</span> ( <span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #666666">@</span>BirthDateFrom <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #666666">@</span>BirthDateTo
+
+
+
+) t_
+</pre></div>
+
+<h3 id="sqlparserparsepaginated-countresultdebugsql">SqlParser#ParsePaginated CountResult.DebugSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">select</span> <span style="color: #007020; font-weight: bold">count</span>(<span style="color: #666666">*</span>) <span style="color: #007020; font-weight: bold">from</span> ( <span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #4070a0">&#39;1980/01/01 0:00:00&#39;</span> <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #4070a0">&#39;1990/01/01 0:00:00&#39;</span>
+
+
+
+) t_
+</pre></div>
+
+<h2 id="row_number">ROW_NUMBER の使用</h2>
+<p><code>SqlParser#ParsePaginated</code> の <code>rowNumberColumn</code> パラメータに任意の文字列を与えると、DB接続の種類を無視して強制的に <code>ROW_NUMBER</code> 関数を使うようになります</p>
+<p><code>rowNumberColumn</code> は <code>ROW_NUMBER</code> 関数の戻り値を受け取る仮想列名です</p>
+<p>View 層で行番号を出力する場合に利用できます</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DBが <code>ROW_NUMBER</code> を利用できるかどうか確認したうえで利用してください<br />
+利用可能なDBとバージョンは下記のとおりです</p>
+<table>
+<thead>
+<tr>
+<th align="left">DB</th>
+<th align="left">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SQLServer</td>
+<td align="left">2005</td>
+</tr>
+<tr>
+<td align="left">Oracle</td>
+<td align="left">9i</td>
+</tr>
+<tr>
+<td align="left">MySQL</td>
+<td align="left">8</td>
+</tr>
+<tr>
+<td align="left">PostgreSQL</td>
+<td align="left">8.4</td>
+</tr>
+<tr>
+<td align="left">DB2</td>
+<td align="left">9.1</td>
+</tr>
+<tr>
+<td align="left">SQLite</td>
+<td align="left">3.25</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="row_number_1">実行例(ROW_NUMBER)</h2>
+<p>SQLファイルやパラメータオブジェクトは同じなので省略</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Program</span>
+{
+    <span style="color: #007020; font-weight: bold">static</span> <span style="color: #007020; font-weight: bold">void</span> <span style="color: #06287e">Main</span>(<span style="color: #902000">string</span>[] args)
+    {
+        ConfigContainer.AddDefault(
+            DbConnectionKind.SqlServer, <span style="color: #60a0b0; font-style: italic">// DBコネクションの種類</span>
+            () =&gt; <span style="color: #007020; font-weight: bold">new</span> SqlParameter()    <span style="color: #60a0b0; font-style: italic">// SQLパラメータインスタンス作成のデリゲート</span>
+        );
+        ConfigContainer.EnableCache = <span style="color: #007020; font-weight: bold">true</span>;
+
+        <span style="color: #902000">var</span> condition = <span style="color: #007020; font-weight: bold">new</span> SqlCondition
+                {
+                    BirthDateFrom = <span style="color: #007020; font-weight: bold">new</span> DateTime(<span style="color: #40a070">1980</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>),
+                    BirthDateTo = <span style="color: #007020; font-weight: bold">new</span> DateTime(<span style="color: #40a070">1990</span>, <span style="color: #40a070">1</span>, <span style="color: #40a070">1</span>)
+                };
+        <span style="color: #902000">var</span> parser = <span style="color: #007020; font-weight: bold">new</span> SqlParser(<span style="color: #4070a0">&quot;path/to/SelectEmployees.sql&quot;</span>, condition);
+        <span style="color: #902000">var</span> result = parser.ParsePaginated(<span style="color: #40a070">10</span>, <span style="color: #40a070">10</span>, <span style="color: #4070a0">&quot;LineNo&quot;</span>); <span style="color: #60a0b0; font-style: italic">// 11件目から20件目を取得</span>
+    }
+}
+</pre></div>
+
+<h3 id="row_number-resultparsedsql">ROW_NUMBER Result.ParsedSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">select</span> <span style="color: #666666">*</span> <span style="color: #007020; font-weight: bold">from</span> ( <span style="color: #007020; font-weight: bold">select</span> temp_.<span style="color: #666666">*</span>, row_number() over( <span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  temp_.BusinessEntityID
+ ) <span style="color: #007020; font-weight: bold">as</span> LineNo <span style="color: #007020; font-weight: bold">from</span> ( <span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #666666">@</span>BirthDateFrom <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #666666">@</span>BirthDateTo
+
+
+
+) <span style="color: #007020; font-weight: bold">as</span> temp_ ) <span style="color: #007020; font-weight: bold">as</span> temp2_ <span style="color: #007020; font-weight: bold">where</span> LineNo <span style="color: #666666">&gt;</span> <span style="color: #40a070">10</span> <span style="color: #007020; font-weight: bold">and</span> LineNo <span style="color: #666666">&lt;=</span> <span style="color: #40a070">20</span>
+</pre></div>
+
+<h3 id="row_number-resultdebugsql">ROW_NUMBER Result.DebugSql</h3>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">select</span> <span style="color: #666666">*</span> <span style="color: #007020; font-weight: bold">from</span> ( <span style="color: #007020; font-weight: bold">select</span> temp_.<span style="color: #666666">*</span>, row_number() over( <span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  temp_.BusinessEntityID
+ ) <span style="color: #007020; font-weight: bold">as</span> LineNo <span style="color: #007020; font-weight: bold">from</span> ( <span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+
+
+
+   t0.BirthDate <span style="color: #007020; font-weight: bold">BETWEEN</span> <span style="color: #4070a0">&#39;1980/01/01 0:00:00&#39;</span> <span style="color: #007020; font-weight: bold">AND</span> <span style="color: #4070a0">&#39;1990/01/01 0:00:00&#39;</span>
+
+
+
+) <span style="color: #007020; font-weight: bold">as</span> temp_ ) <span style="color: #007020; font-weight: bold">as</span> temp2_ <span style="color: #007020; font-weight: bold">where</span> LineNo <span style="color: #666666">&gt;</span> <span style="color: #40a070">10</span> <span style="color: #007020; font-weight: bold">and</span> LineNo <span style="color: #666666">&lt;=</span> <span style="color: #40a070">20</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../expression/" title="式言語" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                式言語
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

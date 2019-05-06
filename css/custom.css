@@ -1,0 +1,72 @@
+/*code from https://qiita.com/mebiusbox2/items/a61d42878266af969e3c*/
+body {
+    font-family: "Noto Sans JP";
+}
+.md-typeset h1 {
+    /*font-size: 24pt;*/
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    border-bottom: solid 2px #f18b21;
+    padding-bottom: 5px;
+}
+.md-typeset h2 {
+    border-bottom: 1px dotted #888;
+}
+
+.md-typeset .md-typeset__table table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+.md-typeset .md-typeset__table th, td {
+  border: 1px solid #ccc;
+}
+
+/* .md-typeset .codehilite {
+  border-color: #000;
+  border-width: 1px;
+  border-style: solid;
+} */
+
+
+/* .md-typeset pre {
+  color: #f8f8f2;
+} */
+
+/* .md-typeset .codehilite {
+  background-color: #222 !important;
+}
+
+.md-typeset .codehilite pre {
+  background-color: #222 !important;
+  color: #aaa;
+  margin: 0;
+} */
+
+/* .md-typeset .codehilite .md-clipboard:before {
+  color: rgba(240,240,240,.8);
+}
+.md-typeset .codehilite .md-clipboard:hover:before {
+  color: rgba(102,217,224,1);
+} */
+
+/* .md-typeset .codehilitetable {
+  margin-left:-20px;
+  margin-right: -20px;
+  border-radius: 0;
+}
+.md-typeset .codehilitetable .linenodiv {
+  background-color: #222 !important;
+}
+.md-typeset .codehilitetable .linenodiv pre {
+  background-color: #222 !important;
+  color: #aaa;
+  margin: 0;
+}
+.md-typeset .codehilitetable .md-clipboard:before {
+  color: rgba(240,240,240,.8);
+}
+.md-typeset .codehilitetable .md-clipboard:hover:before {
+  color: rgba(102,217,224,1);
+} */

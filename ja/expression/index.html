@@ -1,0 +1,883 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>式言語 - EasySqlParser</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EasySqlParser" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EasySqlParser
+            </span>
+            <span class="md-header-nav__topic">
+              式言語
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../config/" title="日本語" class="md-tabs__link md-tabs__link--active">
+          日本語
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EasySqlParser" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    EasySqlParser
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../sql/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../expression/" title="Expression language" class="md-nav__link">
+      Expression language
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../usage/" title="Practical usage" class="md-nav__link">
+      Practical usage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      日本語
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        日本語
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="設定" class="md-nav__link">
+      設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sql/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        式言語
+      </label>
+    
+    <a href="./" title="式言語" class="md-nav__link md-nav__link--active">
+      式言語
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="概要" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="リテラル" class="md-nav__link">
+    リテラル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="比較演算子" class="md-nav__link">
+    比較演算子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="論理演算子" class="md-nav__link">
+    論理演算子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="インスタンスプロパティへのアクセス" class="md-nav__link">
+    インスタンスプロパティへのアクセス
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="組み込み関数の使用" class="md-nav__link">
+    組み込み関数の使用
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../usage/" title="実践的な使い方" class="md-nav__link">
+      実践的な使い方
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="概要" class="md-nav__link">
+    概要
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="リテラル" class="md-nav__link">
+    リテラル
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="比較演算子" class="md-nav__link">
+    比較演算子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="論理演算子" class="md-nav__link">
+    論理演算子
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="インスタンスプロパティへのアクセス" class="md-nav__link">
+    インスタンスプロパティへのアクセス
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="組み込み関数の使用" class="md-nav__link">
+    組み込み関数の使用
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">式言語</h1>
+<h2 id="_2">概要</h2>
+<p>SQL中の式コメントには簡易な式を記述できます。 文法はC#とほとんど同じです。 ただし、C#で可能なことすべてができるわけではありません。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DOMAで提供されている下記の機能はEasySqlParserではサポートされていません</p>
+<ul>
+<li>算術演算子</li>
+<li>連結演算子</li>
+<li>インスタンスメソッドの呼び出し</li>
+<li>インスタンスフィールドへのアクセス</li>
+<li>staticメソッドの呼び出し</li>
+<li>staticフィールドへのアクセス</li>
+<li>カスタム関数の使用</li>
+</ul>
+</div>
+<h2 id="_3">リテラル</h2>
+<p>EasySqlParserでは以下のリテラルが利用できます</p>
+<table>
+<thead>
+<tr>
+<th align="left">リテラル</th>
+<th align="left">型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">null</td>
+<td align="left">-</td>
+</tr>
+<tr>
+<td align="left">true</td>
+<td align="left">bool</td>
+</tr>
+<tr>
+<td align="left">false</td>
+<td align="left">bool</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">10L</td>
+<td align="left">long</td>
+</tr>
+<tr>
+<td align="left">0.123F</td>
+<td align="left">float</td>
+</tr>
+<tr>
+<td align="left">0.123D</td>
+<td align="left">double</td>
+</tr>
+<tr>
+<td align="left">0.123M</td>
+<td align="left">decimal</td>
+</tr>
+<tr>
+<td align="left">10U</td>
+<td align="left">uint</td>
+</tr>
+<tr>
+<td align="left">10UL</td>
+<td align="left">ulong</td>
+</tr>
+<tr>
+<td align="left">"a"</td>
+<td align="left">string</td>
+</tr>
+</tbody>
+</table>
+<p>数値の型は、リテラルの最後に <code>L</code> や <code>F</code> などのサフィックスを付与して区別します。 サフィックスは大文字でなければいけません。</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if MiddleNames != null &amp;&amp; MiddleNames.Count &gt; 0 */</span>
+  t1.MiddleName <span style="color: #007020; font-weight: bold">IN</span> <span style="color: #60a0b0; font-style: italic">/* MiddleNames */</span>(<span style="color: #4070a0">&#39;M&#39;</span>)
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+
+<h2 id="_4">比較演算子</h2>
+<p>EasySqlParserでは以下の比較演算子が利用できます</p>
+<table>
+<thead>
+<tr>
+<th align="left">演算子</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">==</td>
+<td align="left">等値演算子</td>
+</tr>
+<tr>
+<td align="left">!=</td>
+<td align="left">不等値演算子<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></td>
+</tr>
+<tr>
+<td align="left">&lt;</td>
+<td align="left">小なり演算子</td>
+</tr>
+<tr>
+<td align="left">&lt;=</td>
+<td align="left">小なりイコール演算子</td>
+</tr>
+<tr>
+<td align="left">&gt;</td>
+<td align="left">大なり演算子</td>
+</tr>
+<tr>
+<td align="left">&gt;=</td>
+<td align="left">大なりイコール演算子</td>
+</tr>
+</tbody>
+</table>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if BusinessEntityID &gt; 0 */</span>
+  BusinessEntityID <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityID */</span><span style="color: #40a070">1</span>
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+
+<h2 id="_5">論理演算子</h2>
+<p>EasySqlParserでは以下の論理演算子が利用できます</p>
+<table>
+<thead>
+<tr>
+<th align="left">演算子</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">!</td>
+<td align="left">論理否定演算子</td>
+</tr>
+<tr>
+<td align="left">&amp;&amp;</td>
+<td align="left">論理積演算子</td>
+</tr>
+<tr>
+<td align="left">&#124;&#124;</td>
+<td align="left">論理和演算子</td>
+</tr>
+</tbody>
+</table>
+<p>括弧を使って、演算子が適用される優先度を制御できます。</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  t0.<span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee t0
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.EmployeeDepartmentHistory t1
+    <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.Department t2
+    <span style="color: #007020; font-weight: bold">ON</span> t1.DepartmentID <span style="color: #666666">=</span> t2.DepartmentID
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t3
+    <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t3.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+<span style="color: #60a0b0; font-style: italic">/*%if (BusinessEntityID == null || DepartmentID == null) &amp;&amp; FirstName != null */</span>
+  t3.FirstName <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* FirstName */</span><span style="color: #4070a0">&#39;smith&#39;</span>
+<span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+
+<h2 id="_6">インスタンスプロパティへのアクセス</h2>
+<p>ドット <code>.</code> で区切ってプロパティ名を指定することでインスタンスプロパティにアクセスできます。 可視性はpublicでなければなりません。</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if MiddleNames != null &amp;&amp; MiddleNames.Count &gt; 0 */</span>
+  t1.MiddleName <span style="color: #007020; font-weight: bold">IN</span> <span style="color: #60a0b0; font-style: italic">/* MiddleNames */</span>(<span style="color: #4070a0">&#39;M&#39;</span>)
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+
+<h2 id="_7">組み込み関数の使用</h2>
+<p>組み込み関数は、主に、SQLにバインドする前にバインド変数の値を変更するためのユーティリティです。</p>
+<p>たとえば、LIKE句で前方一致検索を行う場合に次のように記述できます。</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if FirstName != null &amp;&amp; FirstName != &quot;&quot; */</span>
+  t1.FirstName <span style="color: #007020; font-weight: bold">LIKE</span> <span style="color: #60a0b0; font-style: italic">/* @StartsWith(FirstName) */</span><span style="color: #4070a0">&#39;A%&#39;</span>
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+</pre></div>
+
+<p>EasySqlParserでは以下の組み込み関数が利用できます</p>
+<table>
+<thead>
+<tr>
+<th align="left">戻り値の型</th>
+<th align="left">関数名とパラメータ</th>
+<th align="left">概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">string</td>
+<td align="left">@Escape(string text)</td>
+<td align="left">LIKE演算のためのエスケープを行うことを示します。<br/> 戻り値は入力値をエスケープした文字列です。<br/> エスケープにはデフォルトのエスケープ文字（$）を用いて行われます。<br/> 引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">@Escape(string text, char escapeChar)</td>
+<td align="left">LIKE演算のためのエスケープを行うことを示します。<br/> 戻り値は入力値をエスケープした文字列です。<br/> エスケープは第2引数で指定したエスケープ文字を用いて行われます。<br/> 最初の引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">@StartsWith(string text)</td>
+<td align="left">前方一致検索を行うことを示します。<br/> 戻り値は入力値をエスケープしワイルドカードを後ろに付与した文字列です。<br/> エスケープにはデフォルトのエスケープ文字（$）を用いて行われます。<br/> 引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">@StartsWith(string text, char escapeChar)</td>
+<td align="left">前方一致検索を行うことを示します。<br/> 戻り値は入力値をエスケープしワイルドカードを後ろに付与した文字列です。<br/> エスケープは第2引数で指定したエスケープ文字を用いて行われます。<br/> 最初の引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">@Contains(string text)</td>
+<td align="left">中間一致検索を行うことを示します。<br/> 戻り値は入力値をエスケープしワイルドカードを前と後ろに付与した文字列です。<br/> エスケープはデフォルトのエスケープ文字（$）を用いて行われます。<br/> 引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">@Contains(string text, char escapeChar)</td>
+<td align="left">中間一致検索を行うことを示します。<br/> 戻り値は入力値をエスケープしワイルドカードを前と後ろに付与した文字列です。<br/> エスケープは第2引数で指定したエスケープ文字を用いて行われます。<br/> 最初の引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">@EndsWith(string text)</td>
+<td align="left">後方一致検索を行うことを示します。<br/> 戻り値は入力値をエスケープしワイルドカードを前に付与した文字列です。<br/> エスケープはデフォルトのエスケープ文字（$）を用いて行われます。<br/> 引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">string</td>
+<td align="left">@EndsWith(string text, char escapeChar)</td>
+<td align="left">後方一致検索を行うことを示します。<br/> 戻り値は入力値をエスケープしワイルドカードを前に付与した文字列です。<br/> エスケープは第2引数で指定したエスケープ文字を用いて行われます。<br/> 最初の引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">DateTime</td>
+<td align="left">@TruncateTime(DateTime dateTime)</td>
+<td align="left">時刻部分を切り捨てることを示します。<br/> 戻り値は時刻部分が切り捨てられた新しい日付です。<br/> 引数にnullを渡した場合、nullを返します。</td>
+</tr>
+<tr>
+<td align="left">DateTimeOffset</td>
+<td align="left">@TruncateTime(DateTimeOffset dateTimeOffset)</td>
+<td align="left">時刻部分を切り捨てることを示します。<br/> 戻り値は時刻部分が切り捨てられた新しい日付です。<br/> 引数にnullを渡した場合、nullを返します。</td>
+</tr>
+</tbody>
+</table>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>不等演算子は <code>&lt;&gt;</code> でも可&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../sql/" title="SQL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                SQL
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../usage/" title="実践的な使い方" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                実践的な使い方
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

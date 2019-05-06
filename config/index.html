@@ -1,0 +1,642 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Configuration - EasySqlParser</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#configuration" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="EasySqlParser" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EasySqlParser
+            </span>
+            <span class="md-header-nav__topic">
+              Configuration
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Home" class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../ja/config/" title="日本語" class="md-tabs__link">
+          日本語
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="EasySqlParser" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    EasySqlParser
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Configuration
+      </label>
+    
+    <a href="./" title="Configuration" class="md-nav__link md-nav__link--active">
+      Configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-connection-type" title="DB connection type" class="md-nav__link">
+    DB connection type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" title="Cache" class="md-nav__link">
+    Cache
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../sql/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../expression/" title="Expression language" class="md-nav__link">
+      Expression language
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../usage/" title="Practical usage" class="md-nav__link">
+      Practical usage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      日本語
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        日本語
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/config/" title="設定" class="md-nav__link">
+      設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/sql/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/expression/" title="式言語" class="md-nav__link">
+      式言語
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/usage/" title="実践的な使い方" class="md-nav__link">
+      実践的な使い方
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#db-connection-type" title="DB connection type" class="md-nav__link">
+    DB connection type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache" title="Cache" class="md-nav__link">
+    Cache
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="configuration">Configuration</h1>
+<h2 id="overview">Overview</h2>
+<p>Set by code base at entry point.</p>
+<p>The items to be set are the following two and both are required.</p>
+<ul>
+<li>DB connection type</li>
+<li>Delegate for creating a <code>System.Data.IDbDataParameter</code> instance</li>
+</ul>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>ConfigContainer.AddDefault(
+    DbConnectionKind.SqlServer, <span style="color: #60a0b0; font-style: italic">// DB connection type</span>
+    () =&gt; <span style="color: #007020; font-weight: bold">new</span> SqlParameter()    <span style="color: #60a0b0; font-style: italic">// Delegate for creating a `System.Data.IDbDataParameter` instance</span>
+);
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">WCF</p>
+<p>As the entry point is hidden in WCF, please be sure to write in the place where Service implementation method etc. are called.</p>
+</div>
+<h2 id="db-connection-type">DB connection type</h2>
+<p>EasySqlParser supports the following DB connections.</p>
+<table>
+<thead>
+<tr>
+<th align="left">DB connection type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SqlServer</td>
+<td align="left">DbConnection is <code>System.Data.SqlClient.SqlConnection</code><br/><strong>Microsoft SQL Server 2012 or later</strong></td>
+</tr>
+<tr>
+<td align="left">SqlServerLegacy</td>
+<td align="left">DbConnection is <code>System.Data.SqlClient.SqlConnection</code><br/> <strong>Microsoft SQL Server 2008 and earlier</strong></td>
+</tr>
+<tr>
+<td align="left">Oracle</td>
+<td align="left">DbConnection is <code>Oracle.DataAccess.Client.OracleConnection</code><br/>or<br/><code>Oracle.ManagedDataAccess.Client.OracleConnection</code><br/> <strong>Oracle 12c or later</strong></td>
+</tr>
+<tr>
+<td align="left">OracleLegacy</td>
+<td align="left">DbConnection is <code>Oracle.DataAccess.Client.OracleConnection</code><br/>or<br/><code>Oracle.ManagedDataAccess.Client.OracleConnection</code><br/> <strong>Oracle 11g and ealier</strong></td>
+</tr>
+<tr>
+<td align="left">DB2</td>
+<td align="left">DbConnection is <code>IBM.Data.DB2.DB2Connection</code></td>
+</tr>
+<tr>
+<td align="left">AS400</td>
+<td align="left">DbConnection is <code>IBM.Data.DB2.iSeries.iDB2Connection</code></td>
+</tr>
+<tr>
+<td align="left">MySql</td>
+<td align="left">DbConnection is <code>MySql.Data.MySqlClient.MySqlConnection</code></td>
+</tr>
+<tr>
+<td align="left">PostgreSql</td>
+<td align="left">DbConnection is <code>Npgsql.NpgsqlConnection</code></td>
+</tr>
+<tr>
+<td align="left">SQLite</td>
+<td align="left">DbConnection is <code>System.Data.SQLite.SQLiteConnection</code><br/>or<br/><code>Microsoft.Data.Sqlite.SqliteConnection</code></td>
+</tr>
+<tr>
+<td align="left">Odbc</td>
+<td align="left">DbConnection is <code>System.Data.Odbc.OdbcConnection</code></td>
+</tr>
+<tr>
+<td align="left">OleDb</td>
+<td align="left">DbConnection is <code>System.Data.Odbc.OleDbConnection</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that the delegate for creating the <code>System.Data.IDbDataParameter</code> instance is set according to the DB connection implementation</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">In case of multiple DB connection</p>
+<p>If you need multiple DB connections such as SQL Server and Oracle, please register additional settings using the <code>AddAditional</code> method</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>ConfigContainer.AddAdditional(
+    DbConnectionKind.Oracle, <span style="color: #60a0b0; font-style: italic">// DB connection type</span>
+    () =&gt; <span style="color: #007020; font-weight: bold">new</span> OracleParameter()    <span style="color: #60a0b0; font-style: italic">// Delegate for creating a `System.Data.IDbDataParameter` instance</span>
+);
+</pre></div>
+
+</div>
+<h2 id="cache">Cache</h2>
+<p>Like DOMA, EasySqlParser has a function to cache the contents of read SQL file.</p>
+<p>Therefore, if you want to modify only SQL files while the Web application is running, the changes are not reflected because the cache is effective.</p>
+<p>In such a case, if you allow <code>SqlParser.ClearCache(path/to/sqlfile)</code> to be executed from the system administrator, it is possible to modify only SQL files.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Think of the cache clear function as a secondary thing and restart the application server as much as possible.</p>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../sql/" title="SQL" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                SQL
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.267712eb.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

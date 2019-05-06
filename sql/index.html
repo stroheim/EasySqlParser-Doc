@@ -1,0 +1,1130 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>SQL - EasySqlParser</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.3020aac5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#sql" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="EasySqlParser" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EasySqlParser
+            </span>
+            <span class="md-header-nav__topic">
+              SQL
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Home" class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../ja/config/" title="日本語" class="md-tabs__link">
+          日本語
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="EasySqlParser" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    EasySqlParser
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../config/" title="Configuration" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        SQL
+      </label>
+    
+    <a href="./" title="SQL" class="md-nav__link md-nav__link--active">
+      SQL
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-file" title="SQL File" class="md-nav__link">
+    SQL File
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoding" title="Encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-comment" title="SQL Comment" class="md-nav__link">
+    SQL Comment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bind-variable-comment" title="Bind variable comment" class="md-nav__link">
+    Bind variable comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-type-parameters" title="Basic type parameters" class="md-nav__link">
+    Basic type parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-of-type-ienumerablet" title="Parameters of type IEnumerable&lt;T&gt;" class="md-nav__link">
+    Parameters of type IEnumerable&lt;T&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedded-variable-comment" title="Embedded variable comment" class="md-nav__link">
+    Embedded variable comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condition-comment" title="Condition comment" class="md-nav__link">
+    Condition comment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-and-end" title="if and end" class="md-nav__link">
+    if and end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elseif-and-else" title="elseif and else" class="md-nav__link">
+    elseif and else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-conditional-comments" title="Nested conditional comments" class="md-nav__link">
+    Nested conditional comments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-comment" title="Repeated comment" class="md-nav__link">
+    Repeated comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-column-list-expansion-comment" title="Selected column list expansion comment" class="md-nav__link">
+    Selected column list expansion comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-column-list-generation-comment" title="Update column list generation comment" class="md-nav__link">
+    Update column list generation comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-block-comment" title="Normal block comment" class="md-nav__link">
+    Normal block comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-line-comment" title="Normal line comment" class="md-nav__link">
+    Normal line comment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../expression/" title="Expression language" class="md-nav__link">
+      Expression language
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../usage/" title="Practical usage" class="md-nav__link">
+      Practical usage
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      日本語
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        日本語
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/config/" title="設定" class="md-nav__link">
+      設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/sql/" title="SQL" class="md-nav__link">
+      SQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/expression/" title="式言語" class="md-nav__link">
+      式言語
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ja/usage/" title="実践的な使い方" class="md-nav__link">
+      実践的な使い方
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-file" title="SQL File" class="md-nav__link">
+    SQL File
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#encoding" title="Encoding" class="md-nav__link">
+    Encoding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql-comment" title="SQL Comment" class="md-nav__link">
+    SQL Comment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bind-variable-comment" title="Bind variable comment" class="md-nav__link">
+    Bind variable comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-type-parameters" title="Basic type parameters" class="md-nav__link">
+    Basic type parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-of-type-ienumerablet" title="Parameters of type IEnumerable&lt;T&gt;" class="md-nav__link">
+    Parameters of type IEnumerable&lt;T&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedded-variable-comment" title="Embedded variable comment" class="md-nav__link">
+    Embedded variable comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condition-comment" title="Condition comment" class="md-nav__link">
+    Condition comment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-and-end" title="if and end" class="md-nav__link">
+    if and end
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elseif-and-else" title="elseif and else" class="md-nav__link">
+    elseif and else
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nested-conditional-comments" title="Nested conditional comments" class="md-nav__link">
+    Nested conditional comments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repeated-comment" title="Repeated comment" class="md-nav__link">
+    Repeated comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-column-list-expansion-comment" title="Selected column list expansion comment" class="md-nav__link">
+    Selected column list expansion comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-column-list-generation-comment" title="Update column list generation comment" class="md-nav__link">
+    Update column list generation comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-block-comment" title="Normal block comment" class="md-nav__link">
+    Normal block comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normal-line-comment" title="Normal line comment" class="md-nav__link">
+    Normal line comment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="sql">SQL</h1>
+<h2 id="overview">Overview</h2>
+<p><em>2-way-sql</em> can do the following by adding it to regular SQL statement</p>
+<ul>
+<li>Assemble dynamic SQL with comments and bind variables</li>
+<li>Execute SQL from tools such as SQL Server Management Studio, SQL Developer, A5: SQL Mk-2, and DBeaver by specifying test data for bind variables</li>
+</ul>
+<h2 id="sql-file">SQL File</h2>
+<p>The SQL file mentioned here is a plain text file written in 2-way-sql</p>
+<h3 id="encoding">Encoding</h3>
+<p>SQL file encoding must be UTF-8</p>
+<h2 id="sql-comment">SQL Comment</h2>
+<p>Perform value binding and conditional branching by writing an expression in the SQL comment.<br />
+SQL comments interpreted by EasySqlParser are called expression comments.</p>
+<ul>
+<li>Bind variable comment</li>
+<li>Embedded variable comment</li>
+<li>Condition comment</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DOMA <code>Repeated Comments (for)</code> and <code>Column List Expanded Comments (expand, populate)</code> are not supported by EasySqlParser</p>
+</div>
+<h3 id="bind-variable-comment">Bind variable comment</h3>
+<p>An expression comment that indicates a bind variable is called a bind variable comment. Bind variables are generated as <code>System.Data.IDbDataParameter</code>.</p>
+<p>Bind variables are shown enclosed in block comments <code>/ * to * /</code>.<br />
+Bind variable names correspond to object property names.<br />
+The corresponding parameter type must be a basic type such as <code>string</code> or <code>int</code> or <code>System.Collections.Generic.IEnumerable&lt;T&gt;</code>.<br />
+You must specify test data immediately after the bind variable comment.<br />
+However, test data is not used at runtime.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Bind variables were fields in DOMA, but are public properties in EasySqlParser</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there is no test data, an error will occur when it is executed with tools such as SSMS, so test data is required</p>
+</div>
+<h3 id="basic-type-parameters">Basic type parameters</h3>
+<p>The following is an example of SqlParser parameters and the corresponding SQL</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #902000">var</span> parser = <span style="color: #007020; font-weight: bold">new</span> SqlParser(
+  <span style="color: #4070a0">&quot;path/to/sql&quot;</span>,
+  <span style="color: #007020; font-weight: bold">new</span> {BusinessEntityID = <span style="color: #40a070">99999</span>}
+);
+<span style="color: #902000">var</span> result = parser.Parse();
+Console.WriteLine(result.DebugSql);
+<span style="color: #60a0b0; font-style: italic">/*</span>
+<span style="color: #60a0b0; font-style: italic">SELECT</span>
+<span style="color: #60a0b0; font-style: italic">  *</span>
+<span style="color: #60a0b0; font-style: italic">FROM</span>
+<span style="color: #60a0b0; font-style: italic">  HumanResources.Employee</span>
+<span style="color: #60a0b0; font-style: italic">WHERE</span>
+<span style="color: #60a0b0; font-style: italic">  BusinessEntityID = 99999</span>
+<span style="color: #60a0b0; font-style: italic">*/</span>
+</pre></div>
+
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  BusinessEntityID <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityID */</span><span style="color: #40a070">1</span>
+</pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unlike DOMA, EasySqlParser <strong>1 bind variable</strong> must also be a property</p>
+</div>
+<h3 id="parameters-of-type-ienumerablet">Parameters of type IEnumerable&lt;T&gt;</h3>
+<p>The bind variable passed to the IN clause must be a property of type <code>IEnumerable &lt;T&gt;</code></p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #902000">var</span> parser = <span style="color: #007020; font-weight: bold">new</span> SqlParser(
+  <span style="color: #4070a0">&quot;path/to/sql&quot;</span>,
+  <span style="color: #007020; font-weight: bold">new</span> {BusinessEntityIDs = <span style="color: #007020; font-weight: bold">new</span> List&lt;<span style="color: #902000">int</span>&gt;{<span style="color: #40a070">10</span>, <span style="color: #40a070">11</span>, <span style="color: #40a070">12</span>}}
+);
+<span style="color: #902000">var</span> result = parser.Parse();
+Console.WriteLine(result.DebugSql);
+<span style="color: #60a0b0; font-style: italic">/*</span>
+<span style="color: #60a0b0; font-style: italic">SELECT</span>
+<span style="color: #60a0b0; font-style: italic">  *</span>
+<span style="color: #60a0b0; font-style: italic">FROM</span>
+<span style="color: #60a0b0; font-style: italic">  HumanResources.Employee</span>
+<span style="color: #60a0b0; font-style: italic">WHERE</span>
+<span style="color: #60a0b0; font-style: italic">  BusinessEntityID IN (10, 11, 12)</span>
+<span style="color: #60a0b0; font-style: italic">*/</span>
+</pre></div>
+
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  BusinessEntityID <span style="color: #007020; font-weight: bold">IN</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityIDs */</span>(<span style="color: #40a070">1</span>)
+</pre></div>
+
+<h3 id="embedded-variable-comment">Embedded variable comment</h3>
+<p>An expression comment that indicates an embedded variable is called an embedded variable comment.<br />
+Embedded variable values ​​are embedded directly as part of SQL when assembling SQL.</p>
+<p>To prevent SQL injection, it is prohibited to include the following values ​​in embedded variable values:</p>
+<ul>
+<li>a ingle quotation (<code>'</code>)</li>
+<li>a semi colon (<code>;</code>)</li>
+<li>line comment (such as <code>--</code>John Doe)</li>
+<li>block comment (such as <code>/*</code> John Doe */)</li>
+</ul>
+<p>Embedded variables are indicated by a block comment <code>/* # ～ */</code>.<br />
+Embedded variable names are mapped to object property names.<br />
+You can use embedded variables when you want to programmatically assemble parts of SQL, such as the ORDER BY clause.</p>
+<p>The following is an example of SqlParser parameters and the corresponding SQL</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #902000">var</span> parser = <span style="color: #007020; font-weight: bold">new</span> SqlParser(
+  <span style="color: #4070a0">&quot;path/to/sql&quot;</span>,
+  <span style="color: #007020; font-weight: bold">new</span> {
+    BusinessEntityID = <span style="color: #40a070">1000</span>,
+    Orderby = <span style="color: #4070a0">&quot;ORDER BY BirthDate ASC&quot;</span>
+  }
+);
+<span style="color: #902000">var</span> result = parser.Parse();
+Console.WriteLine(result.DebugSql);
+<span style="color: #60a0b0; font-style: italic">/*</span>
+<span style="color: #60a0b0; font-style: italic">SELECT</span>
+<span style="color: #60a0b0; font-style: italic">  *</span>
+<span style="color: #60a0b0; font-style: italic">FROM</span>
+<span style="color: #60a0b0; font-style: italic">  HumanResources.Employee</span>
+<span style="color: #60a0b0; font-style: italic">WHERE</span>
+<span style="color: #60a0b0; font-style: italic">  BusinessEntityID &gt; 1000</span>
+<span style="color: #60a0b0; font-style: italic">*/</span>
+</pre></div>
+
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  BusinessEntityID <span style="color: #666666">&gt;</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityID */</span><span style="color: #40a070">1</span>
+<span style="color: #60a0b0; font-style: italic">/*# Orderby */</span>
+</pre></div>
+
+<h3 id="condition-comment">Condition comment</h3>
+<h4 id="if-and-end">if and end</h4>
+<p>An expression comment that indicates a conditional branch is called a conditional comment.<br />
+The syntax is as follows:</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if BusinessEntityID != null */</span>
+  BusinessEntityID <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityID */</span><span style="color: #40a070">1</span>
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+
+<p>This translates to the following SQL statement if <code>BusinessEntityID</code> is not <code>null</code></p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  BusinessEntityID <span style="color: #666666">=</span> <span style="color: #666666">@</span>BusinessEntityID
+</pre></div>
+
+<p><strong>Parameter markers like <code>@</code> are automatically determined by the type of DB connection</strong></p>
+<p>If <code>BusinessEntityID</code> is <code>null</code>, it will be the following SQL statement</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+</pre></div>
+
+<p>As with DOMA, automatic removal of WHERE and HAVING in conditional comments removes the WHERE clause</p>
+<div class="admonition note">
+<p class="admonition-title">Automatic removal of WHERE and HAVING in conditional comments</p>
+<p>All conditional comments are false, and the WHERE clause and the HAVING clause do not hold
+WHERE before <code>/*%if ~ */</code> is automatically removed</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Automatic removal of AND and OR in conditional comments</p>
+<p>If you use conditional comments, it automatically determines the necessity of output for <code>AND</code> and <code>OR</code> that follow the condition.<br />
+For example, in the following SQL, <code>BirthDate</code> is <code>null</code>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if BirthDate != null */</span>
+  t0.BirthDate <span style="color: #666666">&gt;</span> <span style="color: #60a0b0; font-style: italic">/* BirthDate */</span><span style="color: #4070a0">&#39;1980-01-01&#39;</span>
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+  <span style="color: #007020; font-weight: bold">AND</span> t1.FirstName <span style="color: #007020; font-weight: bold">LIKE</span> <span style="color: #4070a0">&#39;A%&#39;</span>
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+</pre></div>
+The <code>AND</code> after <code>/*% end */</code> is automatically removed and the following SQL is generated
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+    t0.BusinessEntityID
+  , t1.FirstName
+  , t1.MiddleName
+  , t1.LastName
+  , t0.BirthDate
+  , t0.MaritalStatus
+  , t0.Gender
+  , t0.HireDate
+<span style="color: #007020; font-weight: bold">FROM</span> HumanResources.Employee t0
+<span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+  <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  t1.FirstName <span style="color: #007020; font-weight: bold">LIKE</span> <span style="color: #4070a0">&#39;A%&#39;</span>
+<span style="color: #007020; font-weight: bold">ORDER</span> <span style="color: #007020; font-weight: bold">BY</span>
+  t0.BusinessEntityID
+</pre></div></p>
+</div>
+<h4 id="elseif-and-else">elseif and else</h4>
+<p>You can also use the following syntax for <code>elseif</code> or <code>else</code> between <code>/*% if conditionals */</code> and <code>/*% end*/</code></p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  t0.<span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee t0
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.EmployeeDepartmentHistory t1
+    <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.Department t2
+    <span style="color: #007020; font-weight: bold">ON</span> t1.DepartmentID <span style="color: #666666">=</span> t2.DepartmentID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+<span style="color: #60a0b0; font-style: italic">/*%if BusinessEntityID != null */</span>
+  t0.BusinessEntityID <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityID */</span><span style="color: #40a070">9999</span>
+<span style="color: #60a0b0; font-style: italic">/*%elseif DepartmentID != null */</span>
+  <span style="color: #007020; font-weight: bold">AND</span> t2.DepartmentID <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* DepartmentID */</span><span style="color: #40a070">99</span>
+<span style="color: #60a0b0; font-style: italic">/*%else*/</span>
+  <span style="color: #007020; font-weight: bold">AND</span> t1.EndDate <span style="color: #007020; font-weight: bold">IS</span> <span style="color: #007020; font-weight: bold">NULL</span>
+<span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+
+<p>If <code>BusinessEntityID != Null</code> holds</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  t0.<span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee t0
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.EmployeeDepartmentHistory t1
+    <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.Department t2
+    <span style="color: #007020; font-weight: bold">ON</span> t1.DepartmentID <span style="color: #666666">=</span> t2.DepartmentID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  t0.BusinessEntityID <span style="color: #666666">=</span> <span style="color: #666666">@</span>BusinessEntityID
+</pre></div>
+
+<p>If <code>BusinessEntityID == null &amp;&amp; DepartmentID != Null</code> holds</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  t0.<span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee t0
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.EmployeeDepartmentHistory t1
+    <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.Department t2
+    <span style="color: #007020; font-weight: bold">ON</span> t1.DepartmentID <span style="color: #666666">=</span> t2.DepartmentID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  t2.DepartmentID <span style="color: #666666">=</span> <span style="color: #666666">@</span>DepartmentID
+</pre></div>
+
+<p>If <code>BusinessEntityID == null &amp;&amp; DepartmentID == null</code> holds</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  t0.<span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee t0
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.EmployeeDepartmentHistory t1
+    <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> HumanResources.Department t2
+    <span style="color: #007020; font-weight: bold">ON</span> t1.DepartmentID <span style="color: #666666">=</span> t2.DepartmentID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  t1.EndDate <span style="color: #007020; font-weight: bold">IS</span> <span style="color: #007020; font-weight: bold">NULL</span>
+</pre></div>
+
+<h4 id="nested-conditional-comments">Nested conditional comments</h4>
+<p>Conditional comments can be nested, as in .NET syntax</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  t0.<span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee t0
+  <span style="color: #007020; font-weight: bold">INNER</span> <span style="color: #007020; font-weight: bold">JOIN</span> Person.Person t1
+    <span style="color: #007020; font-weight: bold">ON</span> t0.BusinessEntityID <span style="color: #666666">=</span> t1.BusinessEntityID
+<span style="color: #007020; font-weight: bold">WHERE</span>
+<span style="color: #60a0b0; font-style: italic">/*%if BusinessEntityID != null */</span>
+  t0.BusinessEntityID <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityID */</span><span style="color: #40a070">1</span>
+  <span style="color: #60a0b0; font-style: italic">/*%if MiddleName != null */</span>
+    <span style="color: #007020; font-weight: bold">AND</span> t1.MiddleName <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* MiddleName */</span><span style="color: #4070a0">&#39;hoge&#39;</span>
+  <span style="color: #60a0b0; font-style: italic">/*%else*/</span>
+    <span style="color: #007020; font-weight: bold">AND</span> t1.MiddleName <span style="color: #007020; font-weight: bold">IS</span> <span style="color: #007020; font-weight: bold">NULL</span>
+  <span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+<span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+
+<div class="admonition warning">
+<p class="admonition-title">Constraints in conditional comments</p>
+<p>You can not use <code>if ~ end</code> across clauses (SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY, etc.)<br/>
+e.g)
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #60a0b0; font-style: italic">/*%if BusinessEntityID != null */</span>
+<span style="color: #007020; font-weight: bold">WHERE</span> BusinessEntityID <span style="color: #666666">=</span> <span style="color: #60a0b0; font-style: italic">/* BusinessEntityID */</span><span style="color: #40a070">99</span>
+<span style="color: #60a0b0; font-style: italic">/*%end*/</span>
+</pre></div>
+It is also an error if <code>if</code> and <code>end</code> are at different levels as shown below
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">SELECT</span>
+  <span style="color: #666666">*</span>
+<span style="color: #007020; font-weight: bold">FROM</span>
+  HumanResources.Employee
+<span style="color: #007020; font-weight: bold">WHERE</span>
+  BusinessEntityID <span style="color: #007020; font-weight: bold">in</span> <span style="color: #60a0b0; font-style: italic">/*%if BirthDate != null */</span>(...  <span style="color: #60a0b0; font-style: italic">/*%end*/</span> ...)
+</pre></div></p>
+</div>
+<h4 id="repeated-comment">Repeated comment</h4>
+<p>Not supported by EasySqlParser</p>
+<h4 id="selected-column-list-expansion-comment">Selected column list expansion comment</h4>
+<p>Not supported by EasySqlParser</p>
+<h4 id="update-column-list-generation-comment">Update column list generation comment</h4>
+<p>Not supported by EasySqlParser</p>
+<h4 id="normal-block-comment">Normal block comment</h4>
+<p>If the third character after the <code>/*</code> is a character that can not be used at the beginning of a C# identifier(Except for <code>%</code>, <code>#</code>, <code>@</code>, <code>"</code> and <code>'</code>, which have special meaning in whitespace and expressions), it is considered a normal block comment</p>
+<p>Normal block comment example</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic">/**～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*+～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*=～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*:～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*;～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*(～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*)～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*&amp;～*/</span>
+</pre></div>
+
+<p>Expression comment example</p>
+<div class="codehilite" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic">/* ～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*a～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*$～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*%～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*#～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*@～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*&quot;～*/</span>
+<span style="color: #60a0b0; font-style: italic">/*&#39;～*/</span>
+</pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use <code>/** ~ */</code> for normal block comments unless there is a specific reason</p>
+</div>
+<h4 id="normal-line-comment">Normal line comment</h4>
+<p><code>--</code> is a line comment</p>
+<p>EasySqlParser does not interpret line comments</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../config/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Configuration
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../expression/" title="Expression language" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Expression language
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.267712eb.js"></script>
+      
+        
+        
+          
+          <script src="../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
