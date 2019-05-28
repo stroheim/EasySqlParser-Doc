@@ -35,8 +35,10 @@ nav:
     - SQL: 'sql.md'
     - 'Expression language': 'expression.md'
     - 'Practical usage': 'usage.md'
+    - 'Release Notes': 'release-notes.md'
     - '日本語':
         - '設定': 'ja/config.md'
         - SQL: 'ja/sql.md'
         - '式言語': 'ja/expression.md'
         - '実践的な使い方': 'ja/usage.md'
+        - 'リリースノート': 'ja/release-notes.md'
