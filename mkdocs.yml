@@ -28,6 +28,10 @@ extra:
     search:
         language: 'ja'
 
+google_analytics:
+  - 'UA-141038490-1'
+  - 'auto'
+
 # Page tree
 nav:
     - Home: 'index.md'
